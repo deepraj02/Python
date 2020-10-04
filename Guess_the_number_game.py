@@ -1,41 +1,16 @@
-# using codeSkulpter
+import randomy
+minValue=1
+maxValue=6
 
-import random
+while True:
+    x=random.randint(minValue, maxValue)
+    print(f"Your Random Number between 1 and 6 is:---\n{x}")
 
-import simplegui
+    roll_again=input("Do you want to generate the random number again:---(y/n)\n")
+    if roll_again.lower()=="y":
+        continue
+    else:
+        print("Thanks for using 'The Random Number Generator', See You Again :))")
+        break
+    
 
-def new_game():
-    global num
-    print("new game starts")
-
-
-def range_of_100():
-    global num
-    num = random.randrange(0, 100)
-    print("your range is 0-100")
-
-
-def range_of_1000():
-    global num
-    num = random.randrange(0, 1000)
-    print("Your range is 0-1000")
-
-
-def input_guess(guess):
-    global num
-    print("Your Guess is ", guess)
-    num1 = int(guess)
-    if num1 == num:
-        print("Correct")
-    elif num1 >= num:
-        print("Greater")
-    elif num1 <= num:
-        print("Lower")
-
-
-frame = simplegui.create_frame("Guess The Number", 200, 200)
-frame.add_button("range[0-1000)", range_of_1000)
-frame.add_button("range[0-100)", range_of_100)
-frame.add_input("enter your guess", input_guess, 200)
-frame.start()
-new_game()
